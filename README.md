@@ -1,59 +1,108 @@
-# Client
+# 🧠 Memo-Connect – Client Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.3.
+> Application de révision collaborative construite avec Angular & Express.js  
+> Interface web moderne, API REST, architecture modulaire, évolution en cours.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Présentation
+
+**Memo-Connect** est une application de gestion de cartes de révision, pensée pour l’apprentissage actif en solo ou en collaboration.  
+Ce dépôt contient le **frontend Angular** de l’application. Le backend Express se trouve dans le dossier `/server`.
+
+L’interface est conçue pour être rapide, responsive et extensible, avec une API REST maison, des filtres dynamiques, une UX adaptée mobile/desktop, et des composants modulaires.
+
+> 🛠️ Ce projet est en développement continu. Des fonctionnalités sont encore en cours d’implémentation, et l’architecture peut évoluer. N’hésitez pas à suivre son avancement ou proposer des contributions !
+
+---
+
+## 🧱 Stack technique
+
+- **Frontend :** Angular 17+ (CLI), TypeScript, SCSS, architecture modulaire
+- **Backend :** Express.js (Node.js), API REST
+- **Stockage :** MongoDB (à venir), JSON temporaire, IndexedDB côté client
+- **Tests :** Karma (unitaires), framework e2e à définir
+- **Outils :** Angular CLI, Git, Postman, ESLint
+
+---
+
+## 🛠️ Installation
+
+# 🚀 Démarrage rapide
+
+## 1. **Cloner le projet**
 
 ```bash
+git clone https://github.com/ton-utilisateur/memo-connect.git
+cd memo-connect
+```
+
+## 2. **Installer les dépendances**
+
+Installer les dépendances du projet (client et serveur) :
+
+```bash
+npm install
+cd client
+npm install
+cd ..
+```
+
+## 3. **Lancer le backend (Express)**
+
+Depuis la racine du projet :
+
+```bash
+node server/server.js
+```
+
+Le serveur Express sera accessible à l’adresse :  
+`http://localhost:3000`
+
+## 4. **Lancer le frontend (Angular)**
+
+Dans un autre terminal :
+
+```bash
+cd client
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+L’application Angular sera accessible à l’adresse :  
+`http://localhost:4200`
 
-## Code scaffolding
+## 5. **Structure du projet**
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Voici l’arborescence générale du projet :
 
-```bash
-ng generate component component-name
+```
+memo-connect/
+├── client/         → Application Angular
+│   └── src/        → Composants, services, pages, etc.
+├── server/         → Backend Express
+│   ├── routes/     → Fichiers de routage API (ex: cards.routes.js)
+│   └── server.js   → Point d'entrée du serveur
+├── README.md
+└── package.json
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 6. **API Express (Backend)**
+
+L’API Express fournit des routes pour manipuler les données des cartes.  
+Exemple :
+
+- `GET /api/cards` → Retourne un message de bienvenue ou la liste des cartes (selon implémentation).
+- D’autres routes (POST, PUT, DELETE) sont à ajouter selon les besoins.
+
+## 7. **Tests et développement**
+
+Le projet est en cours de construction. Des tests unitaires et end-to-end pourront être ajoutés avec :
 
 ```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
+# Tests unitaires Angular
+cd client
 ng test
-```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
+# Tests end-to-end (si implémentés)
 ng e2e
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
