@@ -22,7 +22,7 @@ L’interface est conçue pour être rapide, responsive et extensible, avec une 
 - **Backend :** Express.js (Node.js), API REST
 - **Stockage :** MongoDB (à venir), JSON temporaire, IndexedDB côté client
 - **Tests :** Karma (unitaires), framework e2e à définir
-- **Outils :** Angular CLI, Git, Postman, ESLint
+- **Outils :** Angular CLI, Git, Postman, ESLint, Stylelint
 
 ---
 
@@ -106,3 +106,13 @@ ng test
 # Tests end-to-end (si implémentés)
 ng e2e
 ```
+## 🎨 Lint CSS / SCSS
+
+Le projet utilise [Stylelint](https://stylelint.io/) avec la config `stylelint-config-standard-scss`
+pour assurer la cohérence et la qualité du SCSS.
+
+### Commandes
+
+- Vérifier le code SCSS :
+  ```bash
+  npm run lint:css

@@ -20,6 +20,7 @@
     display: grid;
     grid-template-columns: 1fr;        /* mobile */
     gap: 1rem;
+    list-style-type: none;
 
     @include respond(md) {             /* ≥ md : 2 colonnes */
       grid-template-columns: repeat(2, 1fr);
@@ -38,8 +39,8 @@
   padding: 1rem;
   transition: box-shadow .15s ease, transform .05s ease;
 
-  &:hover { box-shadow: $shadow-md; transform: translateY(-1px); }
-  &:focus-within { @include focus-ring; }
+  &:hover { box-shadow: $shadow; transform: translateY(-1px); }
+
 
   /* Le <strong> (titre) n'a pas de classe dans le HTML donné */
   > strong {
