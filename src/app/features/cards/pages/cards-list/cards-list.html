@@ -1,4 +1,21 @@
 <section class="cards-list">
     <h1>Cartes</h1>
-    <p>Liste minimale prête. (À brancher plus tard)</p>
+
+    <ng-container *ngIf="cards$ | async as cards; else loading">
+      <p *ngIf="!cards.length">Aucune carte pour le moment.</p>
+  
+      <ul *ngIf="cards.length">
+        <li *ngFor="let c of cards" class="card-row">
+          <strong>{{ c.title }}</strong>
+          <span class="meta">
+            • {{ c.difficulty ?? '—' }}
+            • {{ c.createdAt | date:'yyyy-MM-dd' }}
+          </span>
+        </li>
+      </ul>
+    </ng-container>
+  
+    <ng-template #loading>
+      <p>Chargement…</p>
+    </ng-template>
   </section>
