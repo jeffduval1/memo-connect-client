@@ -1,0 +1,66 @@
+/* cards-list.scss */
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'breakpoints' as *;
+
+/* ===== Block: cards (page/liste) ===== */
+.cards {
+ 
+  &__title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__p {                               /* état vide */
+    opacity: .75;
+    margin-bottom: 1rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;        /* mobile */
+    gap: 1rem;
+
+    @include respond(md) {             /* ≥ md : 2 colonnes */
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(lg) {             /* ≥ lg : 3 colonnes */
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+/* ===== Block: card (item) ===== */
+.card {
+  @include card-surface;               /* fond, bord, ombre, radius */
+
+  
+  padding: 1rem;
+  transition: box-shadow .15s ease, transform .05s ease;
+
+  &:hover { box-shadow: $shadow-md; transform: translateY(-1px); }
+  &:focus-within { @include focus-ring; }
+
+  /* Le <strong> (titre) n'a pas de classe dans le HTML donné */
+  > strong {
+    display: block;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: .5rem;
+  }
+
+  &__header {
+    display: flex;
+    gap: .5rem;
+    align-items: baseline;
+  }
+
+  &__title {                           /* méta: difficulté + date */
+    font-size: .9rem;
+    opacity: .8;
+  }
+
+  /* Ajustements responsives spécifiques à la carte */
+  @include respond(md) { padding: 1.25rem; }
+  @include respond(lg) { padding: 1.5rem; }
+}

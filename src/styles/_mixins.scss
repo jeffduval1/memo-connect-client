@@ -1,0 +1,8 @@
+@use 'variables' as *;
+
+@mixin card-surface {
+    background: white;
+    border: 1px solid lightgray;
+    border-radius: $radius;
+    box-shadow: $shadow;
+  }

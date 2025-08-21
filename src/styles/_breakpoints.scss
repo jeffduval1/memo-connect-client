@@ -1,0 +1,10 @@
+/* Breakpoints | Mobile first | Tablet(md) | Desktop(lg) */
+
+$bp-md: 768px;  // tablette
+$bp-lg: 1024px; // desktop
+
+@mixin respond($bp) {
+  @if $bp == md { @media (min-width: #{$bp-md}) { @content; } }
+  @else if $bp == lg { @media (min-width: #{$bp-lg}) { @content; } }
+  @else { @error "Breakpoint inconnu: #{$bp} (md|lg)"; }
+}

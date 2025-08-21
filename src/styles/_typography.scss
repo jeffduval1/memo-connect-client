@@ -1,0 +1,86 @@
+@use 'variables'as *;
+
+/* ================================
+   Typography system
+   Sexy + Pro : Poppins + Inter
+   ================================ */
+
+/* Google Fonts import à mettre dans index.html ou angular.json
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+*/
+
+$fonte-primaire: 'Poppins',
+sans-serif;
+$fonte-secondaire: 'Inter',
+sans-serif;
+$font-mono: ui-monospace,
+SFMono-Regular,
+Menlo,
+Consolas,
+monospace;
+
+body {
+    font-family: $fonte-secondaire;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $color-primary;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $fonte-primaire;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 .5em 0;
+}
+
+h1 {
+    font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 2.25rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 1rem + .5vw, 1.75rem);
+}
+
+h4 {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+p,
+li {
+    font-size: 1rem;
+    margin-bottom: .75rem;
+}
+
+small {
+    font-size: .875rem;
+    opacity: .8;
+}
+
+
+.mono {
+    font-family: $font-mono;
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-muted {
+    opacity: .6;
+}

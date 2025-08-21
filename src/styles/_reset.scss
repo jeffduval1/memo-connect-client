@@ -1,0 +1,67 @@
+/* ---------------------------
+   Reset minimal – 2025 safe
+   --------------------------- */
+
+/* 1) Box model cohérent */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* 2) Marges par défaut plus prévisibles (sans tout casser) */
+:where(h1,h2,h3,h4,h5,h6,p,figure,blockquote,dl,dd) { margin: 0; }
+
+/* 3) Corps du document : base saine */
+html { -webkit-text-size-adjust: 100%; }
+body {
+  min-height: 100dvh;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  /* Optionnel si tu gères un thème clair/sombre :
+  color-scheme: light; // ou: light dark
+  */
+}
+
+/* 4) Médias fluides et block-level pour éviter les espaces fantômes */
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 5) Typo et couleurs héritées sur les contrôles */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+/* 6) Liens : base neutre mais accessible */
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: .15em;
+}
+
+/* 7) Focus visible et contrasté (ne JAMAIS supprimer le focus) */
+:focus-visible {
+  outline: 2px solid var(--color-accent, Highlight);
+  outline-offset: 2px;
+}
+
+/* 8) Listes : garder les puces par défaut (utile en contenu) */
+:where(ul[role="list"], ol[role="list"]) { list-style: none; padding: 0; }
+
+/* 9) Tables plus prévisibles */
+table { border-collapse: collapse; }
+
+/* 10) Défilement respectueux des préférences utilisateur */
+html:focus-within { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 11) Petits plus typographiques (optionnels, support moderne) */
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+p, li { text-wrap: pretty; }
